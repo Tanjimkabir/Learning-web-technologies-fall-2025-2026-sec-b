@@ -1,0 +1,89 @@
+<html>
+<head>
+    <title>Full Form</title>
+    <script src="Labtask3h.js"></script>
+</head>
+
+<body>
+    <form onsubmit="return checkAssignment()">
+        <fieldset>
+            <legend>Full Form</legend>
+            <table>
+
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" id="name" /></td>
+                </tr>
+
+                <tr>
+                    <td>Email</td>
+                    <td><input type="text" id="email" /></td>
+                </tr>
+
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <input type="radio" name="gender" id="male" value="Male" /> Male
+                        <input type="radio" name="gender" id="female" value="Female" /> Female
+                        <input type="radio" name="gender" id="others" value="Others" /> Others
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Date of Birth</td>
+                    <td>
+                        <input type="number" id="day" placeholder="dd" style="width:50px;" /> /
+                        <input type="number" id="month" placeholder="mm" style="width:50px;" /> /
+                        <input type="number" id="year" placeholder="yyyy" style="width:70px;" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Degree</td>
+                    <td>
+                        <input type="checkbox" id="ssc" /> SSC
+                        <input type="checkbox" id="hsc" /> HSC
+                        <input type="checkbox" id="bsc" /> BSc
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Blood Group</td>
+                    <td>
+                        <select id="bloodGroup">
+                            <option value="">--Select--</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>User ID</td>
+                    <td><input type="number" id="userId" /></td>
+                </tr>
+                <tr>
+                    <td>Picture</td>
+                    <td><input type="file" id="picture" accept="image/*" /></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td><p id="error" style="color:red;"></p></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Submit" /></td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>

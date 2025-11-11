@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Gender</title>
+    <script src="Labtask3c.js"></script>
+</head>
+
+<body>
+    <form onsubmit="return checkGender()">
+        <fieldset>
+            <legend>Gender</legend>
+            <table>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <input type="radio" name="gender" id="male"> Male
+                        <input type="radio" name="gender" id="female"> Female
+                        <input type="radio" name="gender" id="other"> Other
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><p id="error" style="color:red;"></p></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>

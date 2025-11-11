@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Profile Picture</title>
+    <script src="Labtask3g.js"></script>
+</head>
+
+<body>
+    <form onsubmit="return checkUserInfo()">
+        <fieldset>
+            <legend>Profile Picture</legend>
+            <table>
+                <tr>
+                    <td>User ID</td>
+                    <td><input type="number" id="userId" /></td>
+                </tr>
+                <tr>
+                    <td>Picture</td>
+                    <td><input type="file" id="picture" accept="image/*" /></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><p id="error" style="color:red;"></p></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Submit" /></td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>DOB</title>
+    <script src="Labtask3d.js"></script>
+</head>
+
+<body>
+    <form onsubmit="return checkDOB()">
+        <fieldset>
+            <legend>Date of Birth</legend>
+            <table>
+                <tr>
+                    <td>dd</td>
+                    <td></td>
+                    <td>mm</td>
+                    <td></td>
+                    <td>yyyy</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><input type="number" id="day" /></td>
+                    <td>/</td>
+                    <td><input type="number" id="month" /></td>
+                    <td>/</td>
+                    <td><input type="number" id="year" /></td>
+                </tr>
+                <tr>
+                    <td colspan="5"><p id="error" style="color:red;"></p></td>
+                </tr>
+                <tr>
+                    <td colspan="5"><input type="submit" value="Submit" /></td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>BloodGroup</title>
+    <script src="Labtask3f.js"></script>
+</head>
+
+<body>
+    <form onsubmit="return checkBloodGroup()">
+        <fieldset>
+            <legend>Blood Group</legend>
+            <table>
+                <tr>
+                    <td>Blood Group</td>
+                    <td>
+                        <select id="bloodGroup">
+                            <option value="">--Select--</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><p id="error" style="color:red;"></p></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Submit" /></td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>
