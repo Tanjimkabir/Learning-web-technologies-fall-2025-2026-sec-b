@@ -1,0 +1,152 @@
+<html>
+<head>
+    <title>Datatype Validation Form</title>
+</head>
+
+<body>
+    <form onsubmit="return saveData()">
+        <fieldset>
+            <legend>Form Validation</legend>
+            <table>
+
+                <tr>
+                    <td>Username</td>
+                    <td><input type="text" name="" value="" id="username" /></td>
+                </tr>
+
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="" value="" id="password" /></td>
+                </tr>
+
+                <tr>
+                    <td>Email</td>
+                    <td><input type="text" name="" value="" id="email" /></td>
+                </tr>
+
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <input type="radio" name="gender" id="male" value="Male" /> Male
+                        <input type="radio" name="gender" id="female" value="Female" /> Female
+                        <input type="radio" name="gender" id="other" value="Other" /> Other
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Degree</td>
+                    <td>
+                        <input type="checkbox" id="ssc" /> SSC
+                        <input type="checkbox" id="hsc" /> HSC
+                        <input type="checkbox" id="bsc" /> BSc
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Date of Birth</td>
+                    <td>
+                        <input type="number" id="day" placeholder="dd" style="width:50px;" /> /
+                        <input type="number" id="month" placeholder="mm" style="width:50px;" /> /
+                        <input type="number" id="year" placeholder="yyyy" style="width:70px;" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td><p id="error" style="color:red;"></p></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Save" /></td>
+                </tr>
+
+            </table>
+        </fieldset>
+    </form>
+
+    <script>
+        function saveData() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var email = document.getElementById("email").value;
+
+            var male = document.getElementById("male").checked;
+            var female = document.getElementById("female").checked;
+            var other = document.getElementById("other").checked;
+
+            var ssc = document.getElementById("ssc").checked;
+            var hsc = document.getElementById("hsc").checked;
+            var bsc = document.getElementById("bsc").checked;
+
+            var day = document.getElementById("day").value;
+            var month = document.getElementById("month").value;
+            var year = document.getElementById("year").value;
+
+            var error = document.getElementById("error");
+
+            if (username === "") {
+                error.textContent = "Username cannot be empty.";
+                return false;
+            }
+
+            if (!isNaN(username)) {
+                error.textContent = "Username must be text.";
+                return false;
+            }
+
+            if (password === "") {
+                error.textContent = "Password cannot be empty.";
+                return false;
+            }
+
+            if (email === "") {
+                error.textContent = "Email cannot be empty.";
+                return false;
+            }
+
+            if (email.indexOf("@") === -1 || email.indexOf(".") === -1) {
+                error.textContent = "Email must be a valid email.";
+                return false;
+            }
+
+            if (!male && !female && !other) {
+                error.textContent = "Please select gender.";
+                return false;
+            }
+
+            if (!ssc && !hsc && !bsc) {
+                error.textContent = "Please select degree.";
+                return false;
+            }
+
+            if (day === "" || month === "" || year === "") {
+                error.textContent = "Date of birth must be filled.";
+                return false;
+            }
+
+            if (isNaN(day) || isNaN(month) || isNaN(year)) {
+                error.textContent = "Date of birth must be numbers.";
+                return false;
+            }
+
+            error.textContent = "";
+
+            alert(
+                "Username: " + username + "\n" +
+                "Password: " + password + "\n" +
+                "Email: " + email + "\n" +
+                "Gender: " + (male ? "Male" : female ? "Female" : "Other") + "\n" +
+                "Degree: " +
+                    (ssc ? "SSC " : "") +
+                    (hsc ? "HSC " : "") +
+                    (bsc ? "BSc " : "") + "\n" +
+                "Date of Birth: " + day + "/" + month + "/" + year
+            );
+
+            return true;
+        }
+    </script>
+
+</body>
+</html>
