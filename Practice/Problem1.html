@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <title>Problem 1</title>
+        <style>
+           label{
+            display: inline-block;
+            width: 150px;
+           }
+           </style>
+    </head>
+    <body>
+        <form onsubmit="return validateform()">
+            <fieldset>
+                <legend>Registration Form</legend>
+            <br>
+            <label>First Name </label>
+            <input type="text" id="fname" oninput="error1.innerHTML=''">
+            <p id="error1" style="color: blue"></p>
+            <br>
+
+            <label>Last Name </label>
+            <input type="text" id="lname" oninput="error2.innerHTML=''">
+            <p id="error2" style="color: blue"></p>
+            <br>
+            
+            <input type="checkbox" name="" value="" /> Male
+            <input type="checkbox" name="" value="" /> Female
+            <input type="checkbox" name="" value="" /> Other
+            <br>
+            <br>
+
+            <input type="radio" name="gender" value="" /> Male
+            <input type="radio" name="gender" value="" /> Female
+            <input type="radio" name="gender" value="" /> Other
+            <br>
+            <br>
+
+            <label>Blood Group</label>
+            <select>
+                <option value="1">A+</option>
+                <option value="2">B+</option>
+                <option value="3">AB+</option>
+            </select>
+            <br>
+            <br>
+
+            <label>Input a Picture </label>
+            <input type="file" id="fl">
+            <br>
+            <br>
+
+            <label>Address </label>
+            <textarea></textarea>
+            <br>
+            <br>
+
+            <input type = "submit" id = "sbmtbtn">
+            <input type = "reset" id = "rstbtn">
+            <input type = "button" value="Click here" id="btn">
+
+            </fieldset>
+        </form>
+
+        <script>
+            function validateform(){
+                var firstname = document.getElementById("fname").value
+                var lastname = document.getElementById("lname").value
+                var error1 = document.getElementById("error1")
+                var error2 = document.getElementById("error2")
+
+                if(firstname == ""){
+                    error1.innerHTML="First Name cannot be empty"
+                    return false;
+                }
+
+                if(lastname == ""){
+                    error2.innerHTML="Last Name cannot be empty"
+                    return false;
+                }
+
+                if(firstname.length < 3){
+                    error1.innerHTML="First Name must be at least 3 characters long"
+                    return false;
+                }
+
+                 if(lastname.length < 3){
+                    error2.innerHTML="Last Name must be at least 3 characters long"
+                    return false;
+                }
+
+                alert(
+                    "Firstname: " + firstname + "\n" +
+                    "lastname: " + lastname
+                )
+
+                return false;
+            }
+        </script>
+    </body>
+</html>

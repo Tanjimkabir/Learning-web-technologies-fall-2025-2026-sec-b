@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Problem 3</title>
+    </head>
+    <body>
+        <form onsubmit="return validateage()">
+            <label><b> User Age : </b></label>
+            <input type="number" id="age">
+            <p id="error" style="color: red"></p>
+            <br>
+            <input type ="submit" id="sbmtbtn">
+        </form>
+        <script>
+            function validateage(){
+                var age = document.getElementById("age").value
+                var error = document.getElementById("error")
+
+                if(age < 40){
+                    error.innerHTML="To be a part of community, you need to be at least 40"
+                    return false;
+                }
+                else if (age > 40 && age < 50){
+                    error.innerHTML="You are the youngsters of this community"
+                    return false;
+                }
+                else {
+                    error.innerHTML="Top level members of the group"
+                    return false;
+                }
+            }
+        </script>
+    </body>
+</html>

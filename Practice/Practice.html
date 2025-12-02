@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>Practice</title>
+    </head>
+    <body>
+        <form onsubmit="return ValidateForm()">
+        <label>Username</label>
+        <input type = "text" name="uname" value="" id="uname" oninput="error1.innerHTML=''">
+        <p id="error1" style="color:red"></p> 
+        <br>
+
+        <label>Password</label>
+        <input type = "password" name="pword" value="" id="pword" oninput="error2.innerHTML=''">
+        <p id="error2" style="color:red"></p>    
+        <br>
+
+        <label>Email</label>
+        <input type = "text" name="email" value="" id="email" oninput="error3.innerHTML=''">
+        <p id="error3" style="color:red"></p> 
+        <br>
+
+        <input type="submit" name="Submit" id="sbmtbtn">
+            
+        </form>
+
+        <script>
+            function ValidateForm(){
+                
+                var username = document.getElementById("uname").value;
+                var password = document.getElementById("pword").value;
+                var email = document.getElementById("email").value;
+                var error1 = document.getElementById("error1");
+                var error2 = document.getElementById("error2");
+                var error3 = document.getElementById("error3");
+
+                if(username === ""){
+                    error1.innerHTML = "Username cannot be empty";
+                    //alert("Username cannot be empty");
+                    return false;
+                }
+
+                if(password === ""){
+                    error2.innerHTML = "Password cannot be empty";
+                    //alert("Password cannot be empty");  
+                    return false;
+                }
+
+                if(email === ""){
+                    error3.innerHTML = "Email cannot be empty";
+                    //alert("Email cannot be empty");
+                    return false;
+                }
+
+                if(password.length <8){
+                    error2.innerHTML = "Password must be at least 8 charecters";
+                    //alert("Password must be at least 8 charecters");
+                    return false;
+                }
+                
+                if(!(email.includes("@") && email.includes("."))){
+                    error3.innerHTML = "Email must inlcude a '@' and a '.' symbol"
+                    //alert("Email must inlcude a '@' and a '.' symbol");
+                    return false;
+                }
+
+                alert(
+                    "Username: " + username + "\n" +
+                    "Password: " + password + "\n" +
+                    "Email: " + email
+                )
+
+
+            }
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Orange Page</title>
+        <style>
+            body{
+            background-color: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <h1 style="color: black; ; text-align: center">Orange Page</h1>
+            <input type="button" Value="click here to go to the navy page" id="btn1">
+            <input type="button" Value="click here to go to the silver page" id="btn2">
+        </form>
+        <script>
+            var btn1 = document.getElementById("btn1")
+            var btn2 = document.getElementById("btn2")
+
+            function gotonavypage(){
+                window.location.href="Testpage3.html"
+            }
+
+            function gotosilverpage(){
+                window.location.href="Testpage2.html"
+            }
+
+            btn1.addEventListener("click", gotonavypage)
+            btn2.addEventListener("click", gotosilverpage)
+        </script>
+    </body>
+</html>
