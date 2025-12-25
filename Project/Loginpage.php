@@ -30,7 +30,7 @@
     <h2>American International University-Bangladesh</h2>
     <h5>Sign In With Your Student ID and Password</h5>
     <br>
-    <form action="Dashboard.php" method="post" onsubmit="return validateform()">
+    <form action="Logincheck.php" method="post" onsubmit="return validateform()">
             <fieldset style="border: 2px solid black">
                 <legend style="border: 2px solid black">Login</legend>
                 <br>
@@ -69,8 +69,8 @@
             error1.innerHTML="Student ID must be  8 characters long"
             return false;
         }
-        if(password.length < 6){
-            error2.innerHTML="Password must be at least 6 characters long"
+        if(password.length < 8){
+            error2.innerHTML="Password must be at least 8 characters long"
             return false;
         }
         return true;

@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(isset($_COOKIE['status']) !== true){
+        header('location: Logincheck.php');
+    }
+?>
+
 <html>
 <head>
     <title>Dashboard Page</title>
@@ -84,6 +91,6 @@
         <p>Ka-66/1, Kuratoli Road, Kuril, Khilkhet, Dhaka 1229, Bangladesh</p>
         <p>Hotline: 01844115004</p>
     </footer>
-    <input type="button" value="Logout" onclick="location.href='Loginpage.php'">
+    <a href="Logout.php">Logout</a>
 </body>
 </html>

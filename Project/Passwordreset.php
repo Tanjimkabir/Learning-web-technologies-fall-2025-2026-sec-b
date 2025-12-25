@@ -30,18 +30,23 @@
     <h2>American International University-Bangladesh</h2>
     <h5>Please Write A New Password</h5>
     <br>
-    <form action="checklogin.php" method="post" onsubmit="return validatepasswordform()">
+    <form action="Passwordresetcheck.php" method="post" onsubmit="return validatepasswordform()">
     <fieldset style="border: 2px solid black">
         <legend style="border: 2px solid black">Password Reset</legend>
         <br>
-        <label><b>New Password: </b></label>
-        <input type="password" name="newpassword" style="border: 2px solid black" id="newpassword" oninput="error1.innerHTML=''">
+        <label><b>Student ID: </b></label>
+        <input type="text" name="studentid" style="border: 2px solid black" id="studentid" oninput="error1.innerHTML=''">
         <p id="error1" style="color: red"></p>
         <br>
         <br>
-        <label><b>Confirm Password: </b></label>
-        <input type="password" name="confirmpassword" style="border: 2px solid black" id="confirmpassword" oninput="error2.innerHTML=''">
+        <label><b>New Password: </b></label>
+        <input type="password" name="newpassword" style="border: 2px solid black" id="newpassword" oninput="error2.innerHTML=''">
         <p id="error2" style="color: red"></p>
+        <br>
+        <br>
+        <label><b>Confirm Password: </b></label>
+        <input type="password" name="confirmpassword" style="border: 2px solid black" id="confirmpassword" oninput="error3.innerHTML=''">
+        <p id="error3" style="color: red"></p>
         <br>
         <br>
         <input type="submit" name="submit" value="Confirm">
@@ -51,21 +56,31 @@
     </div>
 <script>
     function validatepasswordform(){
+        var studentid = document.getElementById("studentid").value;
         var newpassword = document.getElementById("newpassword").value;
         var confirmpassword = document.getElementById("confirmpassword").value;
         var error1 = document.getElementById("error1")
         var error2 = document.getElementById("error2")
+        var error3 = document.getElementById("error3")
 
-        if(newpassword == ""){
-            error1.innerHTML="New Password cannot be empty"
+        if(studentid == ""){
+            error1.innerHTML="Student ID cannot be empty"
             return false;
         }
-        if(newpassword.length < 6){
-            error1.innerHTML="Password must be at least 6 characters long"
+        if(studentid.length !== 8){
+            error1.innerHTML="Student ID must be  8 characters long"
+            return false;
+        }
+        if(newpassword == ""){
+            error2.innerHTML="New Password cannot be empty"
+            return false;
+        }
+        if(newpassword.length < 8){
+            error2.innerHTML="Password must be at least 8 characters long"
             return false;
         }
         if(newpassword !== confirmpassword){
-            error2.innerHTML="Passwords do not match"
+            error3.innerHTML="Passwords do not match"
             return false;
         }
         alert("Password has been reset successfully!");

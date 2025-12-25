@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(isset($_COOKIE['status']) !== true){
+        header('location: Logincheck.php');
+    }
+?>
+
 <html>
 <head>
     <title>Search Lost Item Page</title>
@@ -29,66 +36,74 @@
         .error {
             color: red;
             text-align: center;
+            font-size: 14px;
         }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
-<form>
+<body> 
 <img src="AIUB Logo.png" width="100">
 <h3>Search for a Lost Item</h3>
+<form action="Searchlostitemcheck.php" method="post">
 <div class="box">
     <label><b>Item Name: </b></label>
-    <input type="text" id="searchItem" oninput="document.getElementById('searchError').innerHTML=''">
+    <input type="text" id="searchitem" oninput="e1.innerHTML=''">
     <br>
     <br>
-    <input type="button" value="Search" onclick="searchItem()">
-    <p id="searchError" class="error"></p>
+    <input type="button" value="Search" onclick="validateSearch()">
+    <p id="e1" class="error"></p>
 </div>
-<div class="box" id="resultBox" style="display:none;">
+
+<div class="box" id="resultbox" style="display:none;">
     <h4>Item Found</h4>
-    <p><b>Item Name: </b><span id="itemName"></span></p>
-    <p><b>Description: </b><span id="itemDesc"></span></p>
-    <p><b>Location: </b><span id="itemLoc"></span></p>
+    <p><b>Item Name:</p>
+    <p><b>Description:</p>
+    <p><b>Location:</p>
 </div>
+
 <div class="box">
-    <h4>Submit Proof of Ownership: </h4>
+    <h4>Submit Proof of Ownership:</h4>
     <label><b>Upload Picture: </b></label>
-    <input type="file">
+    <input type="file" id="proofpic" name="proofpic" onchange="e2.innerHTML=''">
+    <p id="e2" class="error"></p>
     <br>
-    <br>
+
     <label><b>Description: </b></label>
-    <textarea rows="4" cols="50"></textarea>
+    <textarea id="description" name="description" rows="4" cols="50" oninput="e3.innerHTML=''"></textarea>
+    <p id="e3" class="error"></p>
     <br>
-    <br>
-    <input type="button" value="Submit Proof" onclick="submitProof()">
-    <br>
-    <br>
+
+    <input type="submit" value="Submit Proof" name="submit" onclick="validateProof()">
+    <br><br>
     <a href="Lost and Found.php">Back</a>
 </div>
 </form>
 <script>
-function searchItem() {
-    var searchValue = document.getElementById("searchItem").value.toUpperCase();
-    var error = document.getElementById("searchError");
-    var resultBox = document.getElementById("resultBox");
+function validateSearch(){
+    var searchitem = document.getElementById("searchitem").value;
 
-    error.innerHTML = "";
-    resultBox.style.display = "none";
-    if (searchValue === "") {
-        error.innerHTML = "Please enter an item name";
-        return;
+    document.getElementById("resultbox").style.display = "none";
+
+    if(searchitem === ""){
+        e1.innerHTML = "Please enter an item name";
+        return false;
     }
-    if (searchValue === item.name) {
-        document.getElementById("itemName").innerHTML = item.name;
-        document.getElementById("itemDesc").innerHTML = item.desc;
-        document.getElementById("itemLoc").innerHTML = item.location;
-        resultBox.style.display = "block";
-    } else {
-        error.innerHTML = "Item not found";
-    }
+
+    e1.innerHTML = "Item not found";
+    return false;
 }
-function submitProof() {
+function validateProof(){
+    var proofpic = document.getElementById("proofpic").value;
+    var description = document.getElementById("description").value;
+
+    if(proofpic == ""){
+        e2.innerHTML = "Please upload a picture";
+        return false;
+    }
+    if(description == ""){
+        e3.innerHTML = "Description is required";
+        return false;
+    }
     alert("Proof submitted successfully!");
     location.reload();
     return false;
