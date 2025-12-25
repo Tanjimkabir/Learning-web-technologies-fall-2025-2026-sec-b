@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title>Mid PRactice 15</title>
+        <style>
+           label{
+            display: inline-block;
+            width: 150px;
+           }
+        </style>
+    </head>
+    <body>
+        <form id="formid1">
+            <fieldset>
+                <legend>Signup Form</legend>
+                <br>
+                <Label>Full Name</Label>
+                <input type="text" id="fname" oninput="error1.innerHTML=''">
+                <p id="error1" style="color: red"></p>
+                <br>
+                <br>
+                <label>Email</label>
+                <input type="text" id="email" oninput="error2.innerHTML=''">
+                <p id="error2" style="color: red"></p>
+                <br>
+                <br>
+                <label>Password</label>
+                <input type="password" id="pwd" oninput="error3.innerHTML=''">
+                <p id="error3" style="color: red"></p>
+                <br>
+                <br>
+                <label>Confirm Password</label>
+                <input type="password" id="cpwd" oninput="error4.innerHTML=''">
+                <p id="error4" style="color: red"></p>
+                <br>
+                <br>
+                <label>Phone Number</label>
+                <input type="number" id="phno" oninput="error5.innerHTML=''">
+                <p id="error5" style="color: red"></p>
+                <br>
+                <br>
+                <input type="submit" value="Signup">
+                </fieldset>
+        </form>
+        <script>
+            function validateform(){
+            var fullname=document.getElementById("fname").value
+            var email=document.getElementById("email").value
+            var password=document.getElementById("pwd").value
+            var confirmpassword=document.getElementById("cpwd").value
+            var phonenumber=document.getElementById("phno").value
+
+            var error1=document.getElementById("error1")
+            var error2=document.getElementById("error2")
+            var error3=document.getElementById("error3")
+            var error4=document.getElementById("error4")
+            var error5=document.getElementById("error5")
+
+            if(fullname==""){
+                error1.innerHTML="Full Name Cannot Be empty"
+                return false;
+            }
+            if(!(email.includes("@")||email.includes("."))){
+                error2.innerHTML="Email is not valid"
+                return false;
+            }
+
+            if(password.length<6){
+                error3.innerHTML="Password must be at least 6 characters long"
+                return false;
+            }
+            if(password!=confirmpassword){
+                error4.innerHTML="Password and Confirm Password do not match"
+                return false;
+            }
+
+            if(phonenumber === "" || isNaN(phonenumber)){
+            error5.innerHTML = "Phone number must contain only digits";
+            return false;
+            }
+            alert("Form Submitted Successfully")         
+        }
+        document.getElementById("formid1").addEventListener("submit", function(e){
+        e.preventDefault();
+        validateform();
+        });
+        </script>
+    </body>
+</html>

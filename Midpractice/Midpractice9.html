@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store - Products</title>
+    <style>
+        
+        .product-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .product-box {
+            display: inline-block;       
+            width: 200px;              
+            padding: 15px;              
+            margin: 15px;                
+            border: 1px solid #ccc;       
+            background-color: #f9f9f9;    
+            text-align: center;             
+            vertical-align: top;            
+            transition: 0.3s;             
+        }
+
+        .product-box:hover {
+            outline: 3px solid #ff6600;     
+            outline-offset: 5px;             
+        }
+
+        .product-box img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;               
+            margin-bottom: 10px;
+        }
+
+        .product-box h3 {
+            margin: 10px 0 5px 0;
+        }
+
+        .product-box p.price {
+            font-weight: bold;
+            color: #ff3300;
+        }
+
+        .product-box a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #ff6600;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .product-box a:hover {
+            background-color: #cc5200;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center;">Our Products</h1>
+
+    <div class="product-container">
+
+        <div class="product-box">
+            <img src="" alt="Laptop">
+            <h3>Laptop Pro X</h3>
+            <p>Intel i7, 16GB RAM, 512GB SSD</p>
+            <p class="price">$999</p>
+            <a href="#">Buy Now</a>
+        </div>
+
+        <div class="product-box">
+            <img src="" alt="Headphones">
+            <h3>Wireless Headphones</h3>
+            <p>Noise-cancelling, Bluetooth 5.0</p>
+            <p class="price">$199</p>
+            <a href="#">Buy Now</a>
+        </div>
+
+        <div class="product-box">
+            <img src="" alt="Smartwatch">
+            <h3>Smartwatch 5</h3>
+            <p>Heart-rate monitor, GPS, Waterproof</p>
+            <p class="price">$299</p>
+            <a href="#">Buy Now</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Problem 5</title>
+    </head>
+    <body>
+        <form>
+            <input type="button" value="Click here to change background" id="btn">
+        </form>
+        <script>
+            var btn = document.getElementById("btn")
+
+            function changebackground(){
+                var color=["yellow","blue","green","pink","orange"];
+
+                var randomcolor = color[Math.floor(Math.random()*color.length)];
+                document.body.style.backgroundColor = randomcolor
+            }
+            btn.addEventListener("click", changebackground)
+        </script>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Email</title>
+    <script src="Labtask3b.js"></script>
+</head>
+
+<body>
+    <h2>Email</h2>
+
+    <form onsubmit="return checkEmail()">
+        <table>
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" id="email" onblur="checkEmail()" placeholder="Enter email"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><p id="error" style="color:red;"></p></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

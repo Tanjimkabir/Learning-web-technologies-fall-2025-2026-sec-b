@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Name</title>
+    <script src="Labtask3a.js"></script>
+</head>
+
+<body>
+    <h2>Name</h2>
+
+    <form onsubmit="return checkName()">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" id="name" onblur="checkName()" placeholder="Enter name"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><p id="error" style="color:red;"></p></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

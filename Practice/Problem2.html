@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Problem 2</title>
+    </head>
+<body>
+    <form>
+        <label>Please Write Something To Make It Uppercase</label>
+        <input type="text" id="atext">
+        <br>
+    </form>
+    <script>
+        var atext = document.getElementById("atext")
+
+        function makeuppercase(){
+            atext.value = atext.value.toUpperCase()
+        }
+        atext.addEventListener("input", makeuppercase)
+    </script>
+</body>
+</html>

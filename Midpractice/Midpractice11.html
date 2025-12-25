@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Card</title>
+    <style>
+        .user-card {
+            position: relative;
+            width: 250px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            background-color: #f0f8ff;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            text-align: center;
+            margin: 50px auto;
+        }
+
+        .user-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .user-card .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #28a745;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .user-card h3 {
+            margin: 10px 0 5px 0;
+        }
+
+        .user-card p {
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="user-card">
+        <div class="badge">Online</div>
+        <img src="" alt="User Photo">
+        <h3>Jane Doe</h3>
+        <p>Frontend developer and UI enthusiast. Loves coffee and coding challenges.</p>
+    </div>
+</body>
+</html>
