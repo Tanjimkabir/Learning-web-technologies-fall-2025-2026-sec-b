@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(isset($_COOKIE['status']) !== true){
+        header('location: Logincheck.php');
+    }
+?>
+
 <html>
 <head>
     <title>Student Tutor Application Page</title>
@@ -38,14 +45,14 @@
 <body>
 <img src="AIUB Logo.png" width="100">
 <h3>Student Tutor Application Form</h3>
-<form onsubmit="return validateForm()">
+<form action="STapplyformcheck.php" method="post" onsubmit="return validateForm()">
 <div class="box">
     <label><b>Name: </b></label>
-    <input type="text" id="name" oninput="e1.innerHTML=''">
+    <input type="text" id="name" name="name" oninput="e1.innerHTML=''">
     <p id="e1" class="error"></p>
     <br>
     <label><b>Degree: </b></label>
-    <select id="degree" onchange="e2.innerHTML=''">
+    <select id="degree" name="degree" onchange="e2.innerHTML=''">
         <option value="">Please Select A Degree  </option>
         <option value="1">BSc in CSE  </option>
         <option value="2">BSc in EEE  </option>
@@ -56,15 +63,15 @@
     <p id="e2" class="error"></p>
     <br>
     <label><b>CGPA: </b></label>
-    <input type="text" id="cgpa" oninput="e3.innerHTML=''">
+    <input type="text" id="cgpa" name="cgpa" oninput="e3.innerHTML=''">
     <p id="e3" class="error"></p>
     <br>
     <label><b>Current Semester: </b></label>
-    <input type="text" id="semester" oninput="e4.innerHTML=''">
+    <input type="text" id="semester" name="semester" oninput="e4.innerHTML=''">
     <p id="e4" class="error"></p>
     <br>
     <label><b>Completed Credits: </b></label>
-    <input type="text" id="credits" oninput="e5.innerHTML=''">
+    <input type="text" id="credits" name="credits" oninput="e5.innerHTML=''">
     <p id="e5" class="error"></p>
     <br>
     <label><b>Teaching Experience: </b></label>
@@ -73,14 +80,14 @@
     <p id="e6" class="error"></p>
     <br>
     <label><b>Upload Photo: </b></label>
-    <input type="file" id="photo" onchange="e7.innerHTML=''">
+    <input type="file" id="photo" name="photo" onchange="e7.innerHTML=''">
     <p id="e7" class="error"></p>
     <br>
     <label><b>Faculty Reference: </b></label>
-    <input type="text" id="reference" oninput="e8.innerHTML=''">
+    <input type="text" id="reference" name="reference" oninput="e8.innerHTML=''">
     <p id="e8" class="error"></p>
     <br>
-    <input type="submit" value="Apply">
+    <input type="submit" name="submit" value="Apply">
     <br>
     <br>
     <a href="Dashboard.php">Back</a>

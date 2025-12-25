@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(isset($_COOKIE['status']) !== true){
+        header('location: Logincheck.php');
+    }
+?>
+
 <html>
 <head>
     <title>Lost and Found Page</title>
@@ -45,27 +52,26 @@
     <p>If you have any <b>Advice</b> or <b>Complaint</b></p>
     <p>Please fill up the form below</p>
 
-    <form onsubmit="return validateForm()">
+    <form action="Anonymouscomplaintcheck.php" method="post" onsubmit="return validateForm()">
         <div class="box">
 
             <label><b>Student ID: </b></label>
-            <input type="text" id="studentid" oninput="e1.innerHTML=''">
+            <input type="text" id="studentid" name="studentid" oninput="e1.innerHTML=''">
             <p id="e1" class="error"></p>
             <br>
 
             <label><b>Complaint: </b></label>
-            <textarea id="complaint" rows="4" cols="50" oninput="e2.innerHTML=''"></textarea>
+            <textarea id="complaint" name="complaint" rows="4" cols="50" oninput="e2.innerHTML=''"></textarea>
             <p id="e2" class="error"></p>
             <br>
 
-            <input type="submit" value="Submit Complaint">
+            <input type="submit" name="submit" value="Submit Complaint">
             <br>
             <br>
             <a href="Dashboard.php">Back</a>
 
         </div>
     </form>
-
 <script>
 function validateForm(){
     var studentid = document.getElementById("studentid").value;

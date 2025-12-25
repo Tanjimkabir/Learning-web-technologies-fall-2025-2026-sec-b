@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(isset($_COOKIE['status']) !== true){
+        header('location: Logincheck.php');
+    }
+?>
+
 <html>
 <head>
     <title>Club Application Form</title>
@@ -41,30 +48,30 @@
 <h1>Welcome to Club Application Form</h3>
 <h3>Please fill up the form below to apply for club membership</h3>
 
-<form onsubmit="return validateForm()">
+<form action="Clubapplycheck.php" method="post" onsubmit="return validateForm()">
 <div class="box">
 
     <label><b>Student Name: </b></label>
-    <input type="text" id="name" oninput="e1.innerHTML=''">
+    <input type="text" id="name" name="name" oninput="e1.innerHTML=''">
     <p id="e1" class="error"></p>
     <br>
     <label><b>Student ID: </b></label>
-    <input type="text" id="sid" oninput="e2.innerHTML=''">
+    <input type="text" id="sid" name="sid" oninput="e2.innerHTML=''">
     <p id="e2" class="error"></p>
     <br>
     <label><b>Semester: </b></label>
-    <input type="text" id="semester" oninput="e3.innerHTML=''">
+    <input type="text" id="semester" name="semester" oninput="e3.innerHTML=''">
     <p id="e3" class="error"></p>
     <br>
     <label><b>Passion: </b></label>
-    <input type="text" id="passion" oninput="e4.innerHTML=''">
+    <input type="text" id="passion" name="passion" oninput="e4.innerHTML=''">
     <p id="e4" class="error"></p>
     <br>
     <label><b>Why do you want to join this club? </b></label>
-    <textarea id="reason" oninput="e5.innerHTML=''"></textarea>
+    <textarea id="reason" name="reason" oninput="e5.innerHTML=''"></textarea>
     <p id="e5" class="error"></p>
     <br>
-    <input type="submit" value="Submit Application">
+    <input type="submit" name="submit" value="Submit Application">
     <br>
     <br>
     <a href="Clubinformation.php">back</a>

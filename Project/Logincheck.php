@@ -9,7 +9,7 @@
         }
         else{
             if($studentid == $password){ 
-                setcookie('status', 'true', time()+3000, '/');
+                setcookie('status', 'true', time()+600, '/');
                 $_SESSION['studentid'] = $studentid;
                 header('location: Dashboard.php');
             }else{
