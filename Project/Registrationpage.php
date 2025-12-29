@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Login Page</title>
+        <title>Registration Page</title>
         <style>
             body {
             background-color: skyblue;
@@ -28,11 +28,11 @@
     <img src="AIUB Logo.png" width="100">
     <br>
     <h2>American International University-Bangladesh</h2>
-    <h5>Sign In With Your Student ID and Password</h5>
+    <h5>Sign Up With Your Student ID and Password</h5>
     <br>
-    <form action="Logincheck.php" method="post" onsubmit="return validateform()">
+    <form action="Registrationcheck.php" method="post" onsubmit="return validateform()">
             <fieldset style="border: 2px solid black">
-                <legend style="border: 2px solid black">Login</legend>
+                <legend style="border: 2px solid black">Registration</legend>
                 <br>
                 <label><b>Student ID: </b></label>
                 <input type="text" name="studentid" style="border: 2px solid black" id="studentid" oninput="error1.innerHTML=''">
@@ -44,13 +44,10 @@
                 <p id="error2" style="color: red"></p>
                 <br>
                 <br>
-                <input type="submit" name="submit" value="Login">
+                <input type="submit" name="submit" value="Create Account">
             </fieldset>
     </form>
-    <a href="Registrationpage.php">Sign Up</a>
-    <br>
-    <br>
-    <a href="Passwordreset.php">Forgot password ?</a>
+    <a href="Loginpage.php">Back</a>
     </div>
 
 <script>
@@ -76,6 +73,7 @@
             error2.innerHTML="Password must be at least 8 characters long"
             return false;
         }
+        alert("Account has been created successfully!");
         return true;
     }
 </script>
