@@ -1,8 +1,5 @@
 <?php
-    session_start();
-    if(isset($_COOKIE['status']) !== true){
-        header('location: Logincheck.php');
-    }
+   require_once('Authenticationcheck.php');
 ?>
 
 <html>
@@ -68,10 +65,6 @@
             <input type="text" id="locationfound" name="locationfound" oninput="e5.innerHTML=''">
             <p id="e5" class="error"></p>
             <br>
-            <label><b>Upload Picture: </b></label>
-            <input type="file" id="upldpic" name="upldpic" onchange="e6.innerHTML=''">
-            <p id="e6" class="error"></p>
-            <br>
             <input type="submit" name="submit" value="Submit Report">
             <br><br>
             <a href="Lost and Found.php">Back</a>
@@ -85,7 +78,6 @@ function validateForm(){
     var itemdescription = document.getElementById("itemdescription").value;
     var datefound = document.getElementById("datefound").value;
     var locationfound = document.getElementById("locationfound").value;
-    var upldpic = document.getElementById("upldpic").value;
 
     if(studentid == ""){
         e1.innerHTML = "Student ID is required";
@@ -107,13 +99,7 @@ function validateForm(){
         e5.innerHTML = "Location found is required";
         return false;
     }
-    if(upldpic == ""){
-        e6.innerHTML = "Please upload a picture";
-        return false;
-    }
-    alert("The item has been reported successfully!");
-    location.reload();
-    return false;
+    return true;
 }
 </script>
 </body>

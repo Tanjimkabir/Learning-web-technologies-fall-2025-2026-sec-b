@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require_once('LostandfoundModel.php');
     if(isset($_POST['submit'])){
         $studentid = $_REQUEST['studentid'];
         $itemname = $_REQUEST['itemname'];
@@ -11,7 +12,13 @@
             echo "Please fill up all the fields";
         }
         else{
-            header('location: Lost and Found.php');
+            $lostItem = ['studentid' => $studentid,'itemname' => $itemname,'itemdescription' => $itemdescription,'datefound' => $datefound,'locationfound' => $locationfound];
+            $status = addLostItem($lostItem);
+            if($status){
+                header('location: Lost and Found.php');
+            }else{
+                echo "Failed to submit report";
+            }
         }
     }else{
         header('location: Reportlostitem.php');

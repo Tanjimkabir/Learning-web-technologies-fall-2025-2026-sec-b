@@ -1,8 +1,5 @@
 <?php
-    session_start();
-    if(isset($_COOKIE['status']) !== true){
-        header('location: Logincheck.php');
-    }
+   require_once('Authenticationcheck.php');
 ?>
 
 <html>
@@ -60,7 +57,7 @@
             <p id="e1" class="error"></p>
             <br>
 
-            <label><b>Complaint: </b></label>
+            <label><b>Complaint or Advice: </b></label>
             <textarea id="complaint" name="complaint" rows="4" cols="50" oninput="e2.innerHTML=''"></textarea>
             <p id="e2" class="error"></p>
             <br>
@@ -85,9 +82,7 @@ function validateForm(){
         e2.innerHTML = "Complaint field cannot be empty";
         return false;
     }
-    alert("Your complaint has been successfully submitted anonymously");
-    location.reload();
-    return false;
+    return true;
 }
 </script>
 </body>

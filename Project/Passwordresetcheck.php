@@ -1,19 +1,26 @@
 <?php
     session_start();
+    require_once('LoginandregistrationModel.php');
     if(isset($_POST['submit'])){
         $studentid = $_REQUEST['studentid'];
         $newpassword = $_REQUEST['newpassword'];
         $confirmpassword = $_REQUEST['confirmpassword'];
 
         if($studentid == "" || $newpassword == "" || $confirmpassword == ""){
-            echo "Please provide student ID and passwords";
+            echo "Please provide Student ID and passwords";
         }
         else{
             if($newpassword != $confirmpassword){
                 echo "Passwords do not match";
             }
             else{
-                header('location: Loginpage.php');
+                $user = ['studentid'=> $studentid, 'newpassword'=> $newpassword];
+                $status = resetPassword($user);
+                if($status){
+                    header('location: Loginpage.php');
+                }else{
+                    echo "Password reset failed";
+                }
             }
         }
     }else{

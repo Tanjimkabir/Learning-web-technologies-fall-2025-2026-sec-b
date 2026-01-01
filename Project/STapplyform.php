@@ -1,8 +1,5 @@
 <?php
-    session_start();
-    if(isset($_COOKIE['status']) !== true){
-        header('location: Logincheck.php');
-    }
+   require_once('Authenticationcheck.php');
 ?>
 
 <html>
@@ -54,11 +51,11 @@
     <label><b>Degree: </b></label>
     <select id="degree" name="degree" onchange="e2.innerHTML=''">
         <option value="">Please Select A Degree  </option>
-        <option value="1">BSc in CSE  </option>
-        <option value="2">BSc in EEE  </option>
-        <option value="3">BBA  </option>
-        <option value="4">LLB  </option>
-        <option value="5">Pharmacy  </option>
+        <option value="BSc in CSE">BSc in CSE  </option>
+        <option value="BSc in EEE">BSc in EEE  </option>
+        <option value="BBA">BBA  </option>
+        <option value="LLB">LLB  </option>
+        <option value="Pharmacy">Pharmacy  </option>
     </select>
     <p id="e2" class="error"></p>
     <br>
@@ -140,7 +137,7 @@ function validateForm(){
     }
     alert("Application submitted successfully!");
     location.reload();
-    return false;
+    return true;
 }
 </script>
 </body>

@@ -1,8 +1,5 @@
 <?php
-    session_start();
-    if(isset($_COOKIE['status']) !== true){
-        header('location: Logincheck.php');
-    }
+   require_once('Authenticationcheck.php');
 ?>
 
 <html>
@@ -56,7 +53,7 @@
     <p id="e1" class="error"></p>
     <br>
     <label><b>Student ID: </b></label>
-    <input type="text" id="sid" name="sid" oninput="e2.innerHTML=''">
+    <input type="text" id="sid" name="studentid" oninput="e2.innerHTML=''">
     <p id="e2" class="error"></p>
     <br>
     <label><b>Semester: </b></label>
@@ -91,13 +88,13 @@ function validateForm() {
         return false;
     }
 
-    if (sid === "") {
+    if (studentid === "") {
     e2.innerHTML = "Student ID is required";
     return false;
     }
 
-    if (sid.length !== 10) {
-    e2.innerHTML = "Student ID must be exactly 10 characters";
+    if (studentid.length !== 8) {
+    e2.innerHTML = "Student ID must be exactly 8 characters";
     return false;
     }
 
@@ -115,7 +112,7 @@ function validateForm() {
     }
     alert("Your application has been submitted successfully!");
     location.reload();
-    return false;
+    return true;
 }
 </script>
 </body>

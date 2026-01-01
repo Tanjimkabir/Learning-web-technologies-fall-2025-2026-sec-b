@@ -84,8 +84,7 @@
             return false;
         }
         alert("Password has been reset successfully!");
-        window.location.href = "Loginpage.php"; 
-        return false;
+        return true;
 }
 </script>
 </body>
