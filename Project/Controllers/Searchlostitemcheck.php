@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once('LostandfoundModel.php');
+    require_once('../Models/LostandfoundModel.php');
 
     if(isset($_POST['search'])){
         $searchitem = $_REQUEST['searchitem'];
@@ -32,10 +32,10 @@
             echo "Please provide a description";
         }
         else{
-            header('location: Lost and Found.php');
+            header('location: ../Views/Lost and Found.php');
         }
     }
     else{
-        header('location: Searchlostitem.php');
+        header('location: ../Views/Searchlostitem.php');
     }
 ?>

@@ -1,5 +1,5 @@
 <?php
-   require_once('Authenticationcheck.php');
+   require_once('../Controllers/Authenticationcheck.php');
 ?>
 
 <html>
@@ -39,9 +39,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body> 
-<img src="AIUB Logo.png" width="100">
+<img src="../Assests/AIUB_Logo.png" width="100">
 <h3>Search for a Lost Item</h3>
-<form action="Searchlostitemcheck.php" method="post" onsubmit="return validateSearch()">
+<form action="../Controllers/Searchlostitemcheck.php" method="post" onsubmit="return validateSearch()">
 <div class="box">
     <label><b>Item Name: </b></label>
     <input type="text" id="searchitem" name="searchitem" oninput="e1.innerHTML=''">

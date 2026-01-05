@@ -25,12 +25,12 @@
 </head>
 <body>
     <div class="box">
-    <img src="AIUB Logo.png" width="100">
+    <img src="../Assests/AIUB_Logo.png" width="100">
     <br>
     <h2>American International University-Bangladesh</h2>
     <h5>Please Write A New Password</h5>
     <br>
-    <form action="Passwordresetcheck.php" method="post" onsubmit="return validatepasswordform()">
+    <form action="../Controllers/Passwordresetcheck.php" method="post" onsubmit="return validatepasswordform()">
     <fieldset style="border: 2px solid black">
         <legend style="border: 2px solid black">Password Reset</legend>
         <br>

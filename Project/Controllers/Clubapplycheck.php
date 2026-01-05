@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once('ClubapplyModel.php');
+    require_once('../Models/ClubapplyModel.php');
     if(isset($_POST['submit'])){
     $name = $_REQUEST['name'];
     $studentid = $_REQUEST['studentid'];
@@ -15,11 +15,11 @@
     $clubapplication = ['name' => $name,'studentid' => $studentid,'semester' => $semester,'passion' => $passion,'reason' => $reason];
     $status = Clubapply($clubapplication);
     if($status){
-    header('location: clubinformation.php');
+    header('location: ../Views/Clubinformation.php');
     }else{
          echo "Failed to submit Club application";
     }
     }else{
-        header('location: Clubapplicationform.php');
+        header('location: ../Views/Clubapply.php');
 }
 ?>

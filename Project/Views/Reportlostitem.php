@@ -1,5 +1,5 @@
 <?php
-   require_once('Authenticationcheck.php');
+   require_once('../Controllers/Authenticationcheck.php');
 ?>
 
 <html>
@@ -41,9 +41,9 @@
 </head>
 
 <body>
-    <img src="AIUB Logo.png" width="100">
+    <img src="../Assests/AIUB_Logo.png" width="100">
     <h3>Please fill out the form below to report info about a lost item:</h3>
-    <form action="Reportlostitemcheck.php" method="post" onsubmit="return validateForm()">
+    <form action="../Controllers/Reportlostitemcheck.php" method="post" onsubmit="return validateForm()">
         <div class="box">
             <label><b>Student ID: </b></label>
             <input type="text" id="studentid" name="studentid" oninput="e1.innerHTML=''">
@@ -66,7 +66,11 @@
             <p id="e5" class="error"></p>
             <br>
             <input type="submit" name="submit" value="Submit Report">
-            <br><br>
+            <br>
+            <br>
+            <input type="button" name="Submit Picture" value="Submit Picture" onclick="window.location.href='Reportlostitempicture.php'">
+            <br>
+            <br>
             <a href="Lost and Found.php">Back</a>
         </div>
     </form>
@@ -99,6 +103,7 @@ function validateForm(){
         e5.innerHTML = "Location found is required";
         return false;
     }
+    alert("Lost item has been reported successfully!");
     return true;
 }
 </script>

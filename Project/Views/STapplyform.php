@@ -1,5 +1,5 @@
 <?php
-   require_once('Authenticationcheck.php');
+   require_once('../Controllers/Authenticationcheck.php');
 ?>
 
 <html>
@@ -40,9 +40,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<img src="AIUB Logo.png" width="100">
+<img src="../Assests/AIUB_Logo.png" width="100">
 <h3>Student Tutor Application Form</h3>
-<form action="STapplyformcheck.php" method="post" onsubmit="return validateForm()">
+<form action="../Controllers/STapplyformcheck.php" method="post" onsubmit="return validateForm()">
 <div class="box">
     <label><b>Name: </b></label>
     <input type="text" id="name" name="name" oninput="e1.innerHTML=''">
@@ -76,10 +76,6 @@
     <input type="radio" id="expNo" name="exp" value="no" onclick="e6.innerHTML=''"> No
     <p id="e6" class="error"></p>
     <br>
-    <label><b>Upload Photo: </b></label>
-    <input type="file" id="photo" name="photo" onchange="e7.innerHTML=''">
-    <p id="e7" class="error"></p>
-    <br>
     <label><b>Faculty Reference: </b></label>
     <input type="text" id="reference" name="reference" oninput="e8.innerHTML=''">
     <p id="e8" class="error"></p>
@@ -98,7 +94,6 @@ function validateForm(){
     var cgpa = document.getElementById("cgpa").value;
     var semester = document.getElementById("semester").value;
     var credits = document.getElementById("credits").value;
-    var photo = document.getElementById("photo").value;
     var reference = document.getElementById("reference").value;
     var expYes = document.getElementById("expYes").checked;
     var expNo = document.getElementById("expNo").checked;
@@ -127,16 +122,11 @@ function validateForm(){
         e6.innerHTML = "Please select an option";
         return false;
     }
-    if(photo === ""){
-        e7.innerHTML = "Photo is required";
-        return false;
-    }
     if(reference === ""){
         e8.innerHTML = "Faculty reference is required";
         return false;
     }
-    alert("Application submitted successfully!");
-    location.reload();
+    alert("Student tutor apply form has been submitted successfully!");
     return true;
 }
 </script>

@@ -29,12 +29,12 @@
 </head>
 <body>
     <div class="box">
-    <img src="AIUB Logo.png" width="100">
+    <img src="../Assests/AIUB_Logo.png" width="100">
     <br>
     <h2>American International University-Bangladesh</h2>
     <h5>Sign In With Your Student ID and Password</h5>
     <br>
-    <form action="Logincheck.php" method="post" onsubmit="return validateform()">
+    <form action="../Controllers/Logincheck.php" method="post" onsubmit="return validateform()">
             <fieldset style="border: 2px solid black">
                 <legend style="border: 2px solid black">Login</legend>
                 <br>

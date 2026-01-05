@@ -1,4 +1,4 @@
 <?php
     setcookie('status', 'true', time()-10, '/');
-    header('location: Loginpage.php');
+    header('location: ../Views/Loginpage.php');
 ?>

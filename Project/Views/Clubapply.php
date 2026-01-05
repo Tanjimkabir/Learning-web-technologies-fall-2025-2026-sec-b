@@ -1,5 +1,5 @@
 <?php
-   require_once('Authenticationcheck.php');
+   require_once('../Controllers/Authenticationcheck.php');
 ?>
 
 <html>
@@ -41,11 +41,11 @@
     </style>
 </head>
 <body>
-<img src="AIUB Logo.png" width="100">
-<h1>Welcome to Club Application Form</h3>
+<img src="../Assests/AIUB_Logo.png" width="100">
+<h1>Welcome to Club Application Form</h1>
 <h3>Please fill up the form below to apply for club membership</h3>
 
-<form action="Clubapplycheck.php" method="post" onsubmit="return validateForm()">
+<form action="../Controllers/Clubapplycheck.php" method="post" onsubmit="return validateForm()">
 <div class="box">
 
     <label><b>Student Name: </b></label>
@@ -53,7 +53,7 @@
     <p id="e1" class="error"></p>
     <br>
     <label><b>Student ID: </b></label>
-    <input type="text" id="sid" name="studentid" oninput="e2.innerHTML=''">
+    <input type="text" id="studentid" name="studentid" oninput="e2.innerHTML=''">
     <p id="e2" class="error"></p>
     <br>
     <label><b>Semester: </b></label>
@@ -78,7 +78,7 @@
 <script>
 function validateForm() {
     var name = document.getElementById("name").value;
-    var sid = document.getElementById("sid").value;
+    var studentid = document.getElementById("studentid").value;
     var semester = document.getElementById("semester").value;
     var passion = document.getElementById("passion").value;
     var reason = document.getElementById("reason").value;
@@ -110,8 +110,7 @@ function validateForm() {
         e5.innerHTML = "Please explain why you want to join";
         return false;
     }
-    alert("Your application has been submitted successfully!");
-    location.reload();
+    alert("Club apply form has been submitted successfully!");
     return true;
 }
 </script>

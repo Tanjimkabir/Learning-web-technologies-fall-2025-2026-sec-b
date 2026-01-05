@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once('AnonymouscomplaintModel.php');
+    require_once('../Models/AnonymouscomplaintModel.php');
     if(isset($_POST['submit'])){
         $studentid = $_REQUEST['studentid'];
         $complaint = $_REQUEST['complaint'];
@@ -12,12 +12,12 @@
             $complaintandadvice = ['studentid' => $studentid,'complaint' => $complaint];
             $status = submitcomplaint($complaintandadvice);
             if($status){
-                header('location: Dashboard.php');
+                header('location: ../Views/Dashboard.php');
             }else{
                 echo "Failed to submit report";
             }
         }
     }else{
-        header('location: Anonymousform.php');
+        header('location: ../Views/Anonymousform.php');
     }
 ?>

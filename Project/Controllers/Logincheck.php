@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once('LoginandregistrationModel.php');
+    require_once('../Models/LoginandregistrationModel.php');
     if(isset($_POST['submit'])){
         $studentid = $_REQUEST['studentid'];
         $password = $_REQUEST['password'];
@@ -12,12 +12,12 @@
             $status = login($user);
             if($status){
                 setcookie('status', 'true', time()+3600, '/');
-                header('location: Dashboard.php');
+                header('location: ../Views/Dashboard.php');
             }else{
                 echo "invalid user!";
             }
         }
     }else{
-        header('location: Loginpage.php');
+        header('location: ../Views/Loginpage.php');
     }
 ?>

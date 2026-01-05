@@ -1,5 +1,5 @@
 <?php
-   require_once('Authenticationcheck.php');
+   require_once('../Controllers/Authenticationcheck.php');
 ?>
 
 <html>
@@ -46,11 +46,11 @@
     </style>
 </head>
 <body>
-<img src="AIUB Logo.png" width="100">
+<img src="../Assests/AIUB_Logo.png" width="100">
 <h1>Welcome to University Clubs Page</h1>
 <h3>Please Click A Card To See Detailed Information About The Club</h3>
 
-<div align="center">
+<div style="text-align: center;">
 
     <div class="card" onclick="showClubInfo('club1')">
         <h3>AIUB Computer Club</h3>

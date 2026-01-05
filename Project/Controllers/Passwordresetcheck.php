@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once('LoginandregistrationModel.php');
+    require_once('../Models/LoginandregistrationModel.php');
     if(isset($_POST['submit'])){
         $studentid = $_REQUEST['studentid'];
         $newpassword = $_REQUEST['newpassword'];
@@ -17,13 +17,13 @@
                 $user = ['studentid'=> $studentid, 'newpassword'=> $newpassword];
                 $status = resetPassword($user);
                 if($status){
-                    header('location: Loginpage.php');
+                    header('location: ../Views/Loginpage.php');
                 }else{
                     echo "Password reset failed";
                 }
             }
         }
     }else{
-        header('location: Passwordreset.php');
+        header('location: ../Views/Passwordreset.php');
     }
 ?>

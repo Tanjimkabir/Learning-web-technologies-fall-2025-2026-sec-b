@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once('LoginandregistrationModel.php');
+    require_once('../Models/LoginandregistrationModel.php');
     if(isset($_POST['submit'])){
         $studentid = $_REQUEST['studentid'];
         $password = $_REQUEST['password'];
@@ -12,13 +12,13 @@
             $user = ['studentid'=>$studentid, 'password'=>$password];
             $status = addUser($user);
             if($status){
-                header('location: Loginpage.php');
+                header('location: ../Views/Loginpage.php');
             }else{
-                header('location: Registration.php');
+                header('location: ../Views/Registrationpage.php');
             }   
         }
     }
     else{
-        header('location: Registration.php');
+        header('location: ../Views/Registrationpage.php');
     }
 ?>

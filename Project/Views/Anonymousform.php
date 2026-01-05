@@ -1,5 +1,5 @@
 <?php
-   require_once('Authenticationcheck.php');
+   require_once('../Controllers/Authenticationcheck.php');
 ?>
 
 <html>
@@ -44,12 +44,12 @@
 </head>
 
 <body>
-    <img src="AIUB Logo.png" width="100">
+    <img src="../Assests/AIUB_Logo.png" width="100">
     <h1>Welcome to Anonymous Complaint Form</h1>
     <p>If you have any <b>Advice</b> or <b>Complaint</b></p>
     <p>Please fill up the form below</p>
 
-    <form action="Anonymouscomplaintcheck.php" method="post" onsubmit="return validateForm()">
+    <form action="../Controllers/Anonymouscomplaintcheck.php" method="post" onsubmit="return validateForm()">
         <div class="box">
 
             <label><b>Student ID: </b></label>
@@ -82,6 +82,7 @@ function validateForm(){
         e2.innerHTML = "Complaint field cannot be empty";
         return false;
     }
+    alert("Anonymous form has been submitted successfully!");
     return true;
 }
 </script>
