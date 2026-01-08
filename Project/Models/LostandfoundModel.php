@@ -1,4 +1,5 @@
 <?php
+//LostandfoundModel Page
 require_once('Database.php');
 
 function addLostItem($lostItem){

@@ -1,4 +1,5 @@
 <?php
+//Clubinformation Page
    require_once('../Controllers/Authenticationcheck.php');
 ?>
 

@@ -1,4 +1,5 @@
 <?php
+    //Registrationcheck Page
     session_start();
     require_once('../Models/LostandfoundModel.php');
     if(isset($_POST['submit'])){

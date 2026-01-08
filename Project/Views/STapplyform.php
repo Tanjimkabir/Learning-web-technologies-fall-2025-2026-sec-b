@@ -1,4 +1,5 @@
 <?php
+    //STapplyform Page
    require_once('../Controllers/Authenticationcheck.php');
 ?>
 
