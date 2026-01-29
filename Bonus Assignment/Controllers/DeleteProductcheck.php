@@ -8,12 +8,12 @@
         $status = deleteProduct($id);
 
         if($status){
-            header('location: ../Views/DisplayProducts.php');
+            header('location: ../Views/Displayproduct.php');
         }else{
             echo "Failed to delete product";
         }
 
     }else{
-        header('location: ../Views/DisplayProducts.php');
+        header('location: ../Views/Displayproduct.php');
     }
 ?>

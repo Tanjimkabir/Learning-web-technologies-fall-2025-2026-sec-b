@@ -47,12 +47,21 @@
 
                 <input type="hidden" name="id" value="<?php echo $product['ID']; ?>">
 
-                Name: <?php echo $product['Product_Name']; ?><br>
-                Buying Price: <?php echo $product['Buying_Price']; ?><br>
-                Selling Price: <?php echo $product['Selling_Price']; ?><br>
-                Displayable: <?php echo $product['Display']; ?><br><br>
+                <label>Name:</label>
+                <?php echo $product['Product_Name']; ?>
+                <br>
+                <label>Buying Price:</label> 
+                <?php echo $product['Buying_Price']; ?>
+                <br>
+                <label>Selling Price:</label> 
+                <?php echo $product['Selling_Price']; ?>
+                <br>
+                <label>Displayable:</label>  
+                <?php echo $product['Display']; ?>
+                <hr>
 
                 <input type="submit" name="submit" value="Delete">
+
             </fieldset>
             <br>
             <a href="Dashboard.php">Back to Dashboard</a>
