@@ -47,8 +47,8 @@
 
 <body>
     <div class="box">
-        <fieldset>
-            <legend>Display</legend>
+        <fieldset style="border:2px solid black">
+            <legend><b>Display</b></legend>
 
             <table>
                 <tr>
